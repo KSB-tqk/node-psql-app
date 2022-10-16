@@ -1,0 +1,5 @@
+CREATE TABLE restaurants (
+	id BIGSERIAL NOT NULL PRIMARY KEY, 
+	name VARCHAR(50),
+	on_sale BOOLEAN
+);
