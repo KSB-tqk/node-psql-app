@@ -33,7 +33,7 @@ app.get("/api/v1/users/:id", async (req, res) => {
     ]);
     console.log(result.rows[0]);
     res.status(200).json({
-      status: "Sucess",
+      status: "Success",
       results: result.rows.length,
       data: {
         restaurant: result.rows[0],
