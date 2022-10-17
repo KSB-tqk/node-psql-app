@@ -32,13 +32,19 @@ app.get("/api/v1/users/:id", async (req, res) => {
       req.params.id,
     ]);
     console.log(result.rows[0]);
-    res.status(200).json({
-      status: "Success",
-      results: result.rows.length,
-      data: {
-        restaurant: result.rows[0],
-      },
-    });
+    if (result != null) {
+      res.status(200).json({
+        status: "Success",
+        results: result.rows.length,
+        data: {
+          restaurant: result.rows[0],
+        },
+      });
+    } else {
+      res.status(400).json({
+        status: "Not Found",
+      });
+    }
   } catch (e) {
     res.status(400).send(e.toString());
   }
