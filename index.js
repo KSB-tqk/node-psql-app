@@ -39,7 +39,9 @@ app.get("/api/v1/users/:id", async (req, res) => {
         restaurant: result.rows[0],
       },
     });
-  } catch (e) {}
+  } catch (e) {
+    res.status(400).send(e.toString());
+  }
 });
 
 app.post("/api/v1/users", async (req, res) => {
@@ -56,7 +58,9 @@ app.post("/api/v1/users", async (req, res) => {
       },
     });
     console.log(result);
-  } catch (e) {}
+  } catch (e) {
+    res.status(400).send(e.toString());
+  }
 });
 
 app.put("/api/v1/users/:id", async (req, res) => {
@@ -73,7 +77,9 @@ app.put("/api/v1/users/:id", async (req, res) => {
         restaurant: result.rows[0],
       },
     });
-  } catch (e) {}
+  } catch (e) {
+    res.status(400).send(e.toString());
+  }
 });
 
 app.delete("/api/v1/users/:id", async (req, res) => {
@@ -89,7 +95,9 @@ app.delete("/api/v1/users/:id", async (req, res) => {
         restaurant: result.rows[0],
       },
     });
-  } catch (e) {}
+  } catch (e) {
+    res.status(400).send(e.toString());
+  }
 });
 
 const port = process.env.PORT || 3001;
