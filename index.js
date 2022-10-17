@@ -16,7 +16,7 @@ app.get("/api/v1/users", async (req, res) => {
       status: "Sucess",
       results: result.rows.length,
       data: {
-        restaurant: result.rows[0],
+        restaurant: result.rows,
       },
     });
   } catch (error) {
