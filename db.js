@@ -6,7 +6,7 @@ const devConfig = `postgresql://${process.env.PG_USER}:${process.env.PG_PASSWORD
 const proConfig = process.env.DATABASE_URL;
 
 const pool = new Pool({
-  connectionString: devConfig,
+  connectionString: proConfig,
 });
 
 module.exports = pool;
