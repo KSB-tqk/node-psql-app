@@ -86,8 +86,8 @@ app.delete("/api/v1/users/:id", async (req, res) => {
   try {
     console.log(req.body);
     const result = await db.query(
-      `UPDATE restaurants SET name = '$1', location = '$2', price_range = '$3' returning *`,
-      [req.body.name, req.body.location, req.body.price_range]
+      `DELETE FROM restaurants WHERE id = '$1' returning *`,
+      [req.params.id]
     );
     res.status(200).json({
       status: "Sucess",
