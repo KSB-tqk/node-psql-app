@@ -106,6 +106,17 @@ app.delete("/api/v1/users/:id", async (req, res) => {
   }
 });
 
+const cars = ["Ferrari", "Lambogini", "Volvo", "BMW"];
+
+app.get("/api/v1/car", (req, res) => {
+  try {
+    console.log(req.body);
+    res.status(200).send(cars[Math.floor(Math.random() * cars.length)]);
+  } catch (e) {
+    res.status(400).send(e.toString());
+  }
+});
+
 const port = process.env.PORT || 3001;
 
 app.listen(port, () => {
